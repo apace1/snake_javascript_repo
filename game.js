@@ -9,7 +9,10 @@ const gameBoard = document.getElementById('game-board')
 
 function main (currentTime) {
     if(gameOver) {
-        if (confirm)
+        if (confirm("You Lost. Press Ok to restart.")) {
+            window.location = '/'
+        }
+        return
     }
 
     window.requestAnimationFrame(main)
@@ -26,8 +29,8 @@ function main (currentTime) {
 window.requestAnimationFrame(main)
 
 function update() {
-    updateSnake()
     updateFood()
+    updateSnake()
     checkDeath()
 }
 
